@@ -9,9 +9,9 @@ import Input from '../Input/Input';
 
 import './Chat.css';
 
-const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
+const ENDPOINT = 'localhost:5000';
 
-let socket;
+let socket;       // 
 
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
@@ -33,7 +33,7 @@ const Chat = ({ location }) => {
         alert(error);
       }
     });
-  }, [ENDPOINT, location.search]);
+  }, [ENDPOINT, location.search]); // effect will take place when these two values change. 
   
   useEffect(() => {
     socket.on('message', message => {
